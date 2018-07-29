@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Users: {{ amount }}</h1>
+    <h1 class="page-header">Users: {{ amount }}</h1>
     <template>
       <SearchPanel></SearchPanel>
     </template>
@@ -9,12 +9,6 @@
         <UserElement :key="id" :index="id" :user="user" ></UserElement>
       </template>
     </div>
-    <ul v-for="(user, id) in users" :key="user.id">
-      <li>ID - {{ id }}</li>
-      <li>Name - {{ user.name }}</li>
-      <li>Email - {{ user.email }}</li>
-      <li>Avatar - {{ user.avatar }}</li>
-    </ul>
   </div>
 </template>
 

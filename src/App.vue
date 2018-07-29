@@ -18,6 +18,9 @@
         <router-view></router-view>
       </div>
 
+      <hr>
+      <h5>vlvereta, BSA 2018 &copy;</h5>
+
   </div>
 </template>
 
