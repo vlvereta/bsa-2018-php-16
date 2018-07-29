@@ -1,6 +1,6 @@
 # bsa-2018-php-16
 
-> A Vue.js project as Binary Studio Academy 2018 hometask #16.\"
+> A Vue.js project as Binary Studio Academy 2018 hometask #16.
 
 ## Build Setup
 
