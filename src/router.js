@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Users from "./components/Users";
+import Users from "./components/Userlist/Users";
+import User from "./components/User";
+import EditUser from "./components/EditUser";
 import Albums from "./components/Albums";
 
 Vue.use(Router);
@@ -10,12 +12,18 @@ export default new Router({
   mode: "history",
   routes: [
     {
-      path: "/",
-      redirect: "/users"
-    },
-    {
       path: "/users",
       component: Users
+    },
+    {
+      path: "/users/:id",
+      component: User,
+      children: [
+        {
+          path: "edit",
+          component: EditUser
+        }
+      ]
     },
     {
       path: "/albums",

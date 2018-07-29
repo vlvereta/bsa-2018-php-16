@@ -1,15 +1,12 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import users from "./modules/users.js";
 
 Vue.use(Vuex);
 
-const state = {
-  count: 10,
-  user: {
-    name: "Alex"
-  }
-};
-
 export default new Vuex.Store({
-  state
+  strict: true,
+  modules: {
+    users
+  }
 });
