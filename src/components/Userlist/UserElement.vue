@@ -2,13 +2,11 @@
   <div class="col-sm-12">
     <div class="panel panel-default user-element">
           <img :src="showAvatar()">
-          <h4>ID: {{ this.index }}</h4>
-          <h4>Name: <a href="#">{{ user.name }}</a></h4>
+          <h4>Name: {{ user.name }}</h4>
           <h4>Email: {{ user.email }}</h4>
           <div class="buttons">
-            <button class="btn btn-success">Albums</button>
-            <button class="btn btn-warning">Edit</button>
-            <button class="btn btn-danger">Delete</button>
+            <button class="btn btn-default">Albums</button>
+            <button class="btn btn-primary">Profile</button>
           </div>
     </div>
   </div>

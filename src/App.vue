@@ -43,6 +43,10 @@ export default {
   color: #2c3e50;
 }
 
+.page-wrp {
+  max-width: 1200px;
+}
+
 h1, h2 {
   font-weight: normal;
 }

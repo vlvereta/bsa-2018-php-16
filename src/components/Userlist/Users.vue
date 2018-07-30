@@ -5,6 +5,9 @@
       <SearchPanel></SearchPanel>
     </template>
     <div class="row">
+      <div class="col-sm-12">
+        <button class="btn btn-success add-user-btn">Add user</button>
+      </div>
       <template v-for="(user, id) in users">
         <UserElement :key="id" :index="id" :user="user" ></UserElement>
       </template>
@@ -39,5 +42,8 @@ export default {
 </script>
 
 <style>
-
+.add-user-btn {
+  width: 100%;
+  margin-bottom: 15px;
+}
 </style>
