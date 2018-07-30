@@ -5,13 +5,13 @@
         <div class="form-group">
           <label class="control-label col-sm-2">Name:</label>
           <div class="col-sm-10">
-            <input v-model.trim="newUser.name" type="text" class="form-control" id="email" placeholder="Enter name">
+            <input v-model.trim="newUser.name" type="text" class="form-control" id="name" placeholder="Enter name">
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-sm-2">Email:</label>
           <div class="col-sm-10"> 
-           <input v-model.trim="newUser.email" type="email" class="form-control" id="pwd" placeholder="Enter email">
+           <input v-model.trim="newUser.email" type="email" class="form-control" id="email" placeholder="Enter email">
           </div>
         </div>
         <div class="form-group">
@@ -23,7 +23,7 @@
         <div class="form-group"> 
           <div class="buttons">
             <button type="submit" class="btn btn-success">Add</button>
-            <button @click="$router.go(-1)" type="button" class="btn btn-primary">Back</button>
+            <button @click="$router.push({ name: 'users' })" type="button" class="btn btn-primary">Back</button>
           </div>
         </div>
         </form>

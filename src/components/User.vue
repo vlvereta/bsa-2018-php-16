@@ -7,10 +7,10 @@
         <h3>Name: {{ user.name }}</h3>
         <h3>Email: {{ user.email }}</h3>
         <div class="buttons">
-          <button @click="$router.go(-1)" class="btn btn-primary">Back</button>
+          <button @click="$router.push({ name: 'users'})" class="btn btn-primary">Back</button>
           <button class="btn btn-success">Albums</button>
           <button @click="$router.push({ name: 'edit-user', params: { id: $route.params.id }})" class="btn btn-warning">Edit</button>
-          <button class="btn btn-danger">Delete</button>
+          <button @click="deleteUser" class="btn btn-danger">Delete</button>
         </div>
       </div>
     </div>
@@ -30,6 +30,13 @@ export default {
     },
     avatar() {
       return this.$store.getters['users/getAvatar'](this.$route.params.id);
+    }
+  },
+
+  methods: {
+    deleteUser() {
+      this.$store.dispatch('users/deleteUser', this.$route.params.id);
+      this.$router.push({ name: 'users'});
     }
   }
 }
