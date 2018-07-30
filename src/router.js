@@ -4,7 +4,7 @@ import Users from "./components/Userlist/Users";
 import AddUser from "./components/AddUser";
 import User from "./components/User";
 import EditUser from "./components/EditUser";
-import Albums from "./components/Albums";
+import Albums from "./components/Albumlist/Albums";
 
 Vue.use(Router);
 
@@ -34,7 +34,13 @@ export default new Router({
     },
     {
       path: "/albums",
+      name: "albums",
       component: Albums
+    },
+    {
+      path: "/albums/:id",
+      name: "album"
+      // component: Album
     }
   ]
 });
