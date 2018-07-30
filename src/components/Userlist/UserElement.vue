@@ -6,7 +6,7 @@
           <h4>Email: {{ user.email }}</h4>
           <div class="buttons">
             <button class="btn btn-default">Albums</button>
-            <button class="btn btn-primary">Profile</button>
+            <router-link :to="{ name: 'user', params: { id: index }}"><button class="btn btn-primary">Profile</button></router-link>
           </div>
     </div>
   </div>
