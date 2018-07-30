@@ -1,6 +1,7 @@
 <template>
-  <div class="container">
-    <h1>EditUser!</h1>
+  <div>
+    <h1 class="page-header">Edit User ID: {{ $route.params.id }}</h1>
+    <h2>Name: {{ user.name }}</h2>
   </div>
 </template>
 
@@ -9,6 +10,12 @@ export default {
   data() {
     return {
     };
+  },
+
+  computed: {
+    user() {
+      return this.$store.state.users.users[this.$route.params.id];
+    }
   }
 }
 </script>

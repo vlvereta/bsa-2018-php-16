@@ -30,6 +30,7 @@ export default {
     return {
     };
   },
+  
   computed: {
     ...mapState({
       users: state => state.users.users,

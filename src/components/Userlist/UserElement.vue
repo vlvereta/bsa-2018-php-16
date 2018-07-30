@@ -1,7 +1,7 @@
 <template>
   <div class="col-sm-12">
     <div class="panel panel-default user-element">
-          <img :src="showAvatar()">
+          <img :src="avatar">
           <h4>Name: {{ user.name }}</h4>
           <h4>Email: {{ user.email }}</h4>
           <div class="buttons">
@@ -27,11 +27,9 @@ export default {
     };
   },
 
-  methods: {
-    showAvatar: function () {
-      var avatar = this.user.avatar;
-      // I don't know why, but only this link it can eat.. (I'm about CodeSandBox).
-      return avatar ? avatar : 'https://rawgit.com/vlvereta/bsa-2018-php-16/eaea953d5abbee50982590e9a3dc27611579a66a/src/assets/no-photo.png';
+  computed: {
+    avatar() {
+      return this.$store.getters['users/getAvatar'](this.index);
     }
   }
 }
@@ -54,7 +52,9 @@ export default {
 
 .user-element > .buttons {
   width: 20%;
-  display: flex;
-  justify-content: space-between;
+}
+
+.buttons > button {
+  margin: 10px;
 }
 </style>
