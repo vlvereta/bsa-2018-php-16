@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1 class="page-header">{{ this.user.name }}'s albums: {{ amount }}</h1>
-    <template v-for="(album, id) in albums">
-      <AlbumElement :key="id" :index="id" :album="album"></AlbumElement>
+    <template v-for="album in albums">
+      <AlbumElement :key="album.id" :index="album.id" :album="album"></AlbumElement>
     </template>
   </div>
 </template>

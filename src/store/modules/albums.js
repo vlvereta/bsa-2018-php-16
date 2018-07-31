@@ -1,18 +1,21 @@
 const state = {
   albums: [
     {
+      id: 0,
       title: "Cats",
       preview:
         "https://rawgit.com/vlvereta/bsa-2018-php-16/01fc3b7c4f0107d641a1141c300102ee63639d93/src/assets/albums/cat-preview.jpeg",
       userId: 0
     },
     {
+      id: 1,
       title: "Dogs",
       preview:
         "https://rawgit.com/vlvereta/bsa-2018-php-16/01fc3b7c4f0107d641a1141c300102ee63639d93/src/assets/albums/dog-preview.jpg",
       userId: 1
     },
     {
+      id: 2,
       title: "Fish",
       preview:
         "https://rawgit.com/vlvereta/bsa-2018-php-16/01fc3b7c4f0107d641a1141c300102ee63639d93/src/assets/albums/fish-preview.jpeg",
