@@ -22,6 +22,26 @@ const state = {
 };
 
 const getters = {
+  getUserAlbums: state => id => {
+    var albums = [];
+    state.albums.forEach(function(item) {
+      if (item.userId === id) {
+        albums.push(item);
+      }
+    });
+    return albums;
+  },
+
+  getUserAlbumsAmount: state => id => {
+    var amount = 0;
+    state.albums.forEach(function(item) {
+      if (item.userId === id) {
+        amount++;
+      }
+    });
+    return amount;
+  },
+
   getCheckedAmount: state => checked => {
     if (!checked.length) return state.albums.length;
 

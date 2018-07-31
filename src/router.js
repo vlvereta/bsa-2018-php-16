@@ -4,6 +4,7 @@ import Users from "./components/Userlist/Users";
 import AddUser from "./components/User/AddUser";
 import User from "./components/User/User";
 import EditUser from "./components/User/EditUser";
+import UserAlbums from "./components/User/UserAlbums";
 import Albums from "./components/Albumlist/Albums";
 import AddAlbum from "./components/Album/AddAlbum";
 import Album from "./components/Album/Album";
@@ -38,6 +39,11 @@ export default new Router({
       path: "/users/:id/edit",
       name: "edit-user",
       component: EditUser
+    },
+    {
+      path: "/users/:id/albums",
+      name: "user-albums",
+      component: UserAlbums
     },
     {
       path: "/albums",
