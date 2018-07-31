@@ -83,76 +83,32 @@ const getters = {
     });
     return photos;
   }
-
-  // getUserAlbumsAmount: state => id => {
-  //   var amount = 0;
-  //   state.albums.forEach(function(item) {
-  //     if (item.userId === id) {
-  //       amount++;
-  //     }
-  //   });
-  //   return amount;
-  // },
-
-  // getCheckedAmount: state => checked => {
-  //   if (!checked.length) return state.albums.length;
-
-  //   var amount = 0;
-  //   checked.forEach(function(item, i, arr) {
-  //     state.albums.forEach(function(item2, i2, arr2) {
-  //       if (item2.userId === item) {
-  //         amount++;
-  //       }
-  //     });
-  //   });
-  //   return amount;
-  // },
-
-  // getCheckedAlbums: state => checked => {
-  //   if (!checked.length) return state.albums;
-
-  //   var albums = [];
-  //   checked.sort();
-  //   checked.forEach(function(item, i, arr) {
-  //     state.albums.forEach(function(item2, i2, arr2) {
-  //       if (item2.userId === item) {
-  //         albums.push(item2);
-  //       }
-  //     });
-  //   });
-  //   return albums;
-  // },
-
-  // getPreview: state => id => {
-  //   var preview = state.albums[id].preview;
-  //   return preview
-  //     ? preview
-  //     : "https://rawgit.com/vlvereta/bsa-2018-php-16/eaea953d5abbee50982590e9a3dc27611579a66a/src/assets/no-photo.png";
-  // }
 };
 
 const mutations = {
-  // ADD_ALBUM(state, album) {
-  //   state.albums.push({
-  //     title: album.title,
-  //     preview: album.preview,
-  //     userId: album.userId
-  //   });
-  // },
+  ADD_PHOTO(state, photo) {
+    state.photos.push({
+      title: photo.title,
+      imgUrl: photo.imgUrl,
+      albumId: photo.albumId
+    });
+  },
+
   DELETE_PHOTO(state, id) {
     state.photos.splice(id, 1);
   }
 };
 
 const actions = {
-  // addAlbum({ context, commit }, data) {
-  //   return new Promise(resolve => {
-  //     setTimeout(() => {
-  //       commit("ADD_ALBUM", data);
-  //       resolve();
-  //     }, 250);
-  //   });
-  // },
+  addPhoto({ context, commit }, data) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        commit("ADD_PHOTO", data);
+        resolve();
+      }, 250);
+    });
+  },
+
   deletePhoto({ commit }, id) {
     return new Promise(resolve => {
       setTimeout(() => {

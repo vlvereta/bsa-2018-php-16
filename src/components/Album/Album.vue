@@ -7,7 +7,7 @@
             <h3>Title: {{ album.title }}</h3>
             <h3>Owner: <a @click="$router.push({ name: 'user', params: { id: album.userId }})">{{ user.name }}</a></h3>
             <div class="buttons">
-              <!-- <button @click="$router.push({ name: 'add-photo' })" class="btn btn-success add-photo-btn">Add new photo</button> -->
+              <button @click="$router.push({ name: 'add-photo', params: { id: $route.params.id } })" class="btn btn-success add-photo-btn">Add new photo</button>
               <button @click="$router.push({ name: 'albums' })" class="btn btn-primary">Albums</button>
               <button @click="$router.push({ name: 'edit-album', params: { id: $route.params.id } })" class="btn btn-warning">Edit</button>
               <button @click="deleteAlbum" class="btn btn-danger">Delete</button>
@@ -23,7 +23,8 @@
             </div>
             <div class="h-with-delete">
               <h4>{{ photo.title }}</h4>
-              <button @click="this.deletePhotoId = photo.id; deletePhoto();" class="btn btn-danger btn-sm">Delete</button>
+              <!-- How to pass photo.id to deletePhoto mehtod correctly?1 -->
+              <button @click="deletePhotoId = photo.id; deletePhoto();" class="btn btn-danger btn-sm">Delete</button>
             </div>
           </div>
         </div>
