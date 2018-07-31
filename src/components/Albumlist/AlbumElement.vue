@@ -3,7 +3,7 @@
     <div class="panel panel-default">
       <div class="album-item">
         <div class="img-wrp">
-          <router-link :to="{ name: 'album', params: { id: index }}" ><img class="preview" :src="album.preview"></router-link>
+          <router-link :to="{ name: 'album', params: { id: index }}" ><img class="preview" :src="preview"></router-link>
         </div>
         <h4>{{ album.title }}</h4>
       </div>
@@ -25,6 +25,12 @@ export default {
     return {
     };
   },
+
+  computed: {
+    preview() {
+      return this.$store.getters['albums/getPreview'](this.index);
+    }
+  }
 }
 </script>
 

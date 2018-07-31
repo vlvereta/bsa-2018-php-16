@@ -4,6 +4,11 @@
     <template>
       <CheckPanel @clicked="onClickCheckPanel"></CheckPanel>
     </template>
+    <div class="row">
+      <div class="col-sm-12">
+        <router-link :to="{ name: 'add-album' }"><button class="btn btn-success add-album-btn">Create new album</button></router-link>
+      </div>
+    </div>
     <template v-for="(album, id) in albums">
       <AlbumElement :key="id" :index="id" :album="album"></AlbumElement>
     </template>
@@ -45,7 +50,7 @@ export default {
 </script>
 
 <style>
-.add-user-btn {
+.add-album-btn {
   width: 100%;
   margin-bottom: 15px;
 }
