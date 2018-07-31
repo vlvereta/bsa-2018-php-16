@@ -3,7 +3,7 @@
     <div class="panel panel-default">
       <div class="album-item">
         <div class="img-wrp">
-          <router-link :to="{ name: 'album', params: { id: index }}" ><img :src="album.preview"></router-link>
+          <router-link :to="{ name: 'album', params: { id: index }}" ><img class="preview" :src="album.preview"></router-link>
         </div>
         <h4>{{ album.title }}</h4>
       </div>
@@ -33,12 +33,13 @@ export default {
   padding: 15px;
 }
 
-.img-wrp > img {
+.preview {
   width: 150px;
   height: 150px;
+  border: 1px solid #2c3e50;
 }
 
-.img-wrp > img:hover {
+.preview:hover {
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 </style>

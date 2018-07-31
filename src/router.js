@@ -13,6 +13,10 @@ export default new Router({
   mode: "history",
   routes: [
     {
+      path: "/",
+      redirect: "/users"
+    },
+    {
       path: "/users",
       name: "users",
       component: Users

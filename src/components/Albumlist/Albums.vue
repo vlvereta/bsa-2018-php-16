@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
 import CheckPanel from './CheckPanel';
 import AlbumElement from './AlbumElement';
 
@@ -28,12 +27,13 @@ export default {
   },
   
   computed: {
-    ...mapState({
-      albums: state => state.albums.albums,
-    }),
-    ...mapGetters({
-      amount: 'albums/albumsAmount'
-    })
+    albums() {
+      return this.$store.getters['albums/getCheckedAlbums'](this.checked);
+    },
+    
+    amount() {
+      return this.$store.getters['albums/getCheckedAmount'](this.checked);
+    }
   },
 
   methods: {

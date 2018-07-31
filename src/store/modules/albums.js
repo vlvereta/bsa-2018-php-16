@@ -4,25 +4,39 @@ const state = {
   albums: [
     {
       title: "Cats",
-      preview: "",
+      preview:
+        "https://rawgit.com/vlvereta/bsa-2018-php-16/01fc3b7c4f0107d641a1141c300102ee63639d93/src/assets/albums/cat-preview.jpeg",
       userId: 1
     },
     {
       title: "Dogs",
-      preview: "",
+      preview:
+        "https://rawgit.com/vlvereta/bsa-2018-php-16/01fc3b7c4f0107d641a1141c300102ee63639d93/src/assets/albums/dog-preview.jpg",
       userId: 2
     },
     {
       title: "Fish",
-      preview: "",
+      preview:
+        "https://rawgit.com/vlvereta/bsa-2018-php-16/01fc3b7c4f0107d641a1141c300102ee63639d93/src/assets/albums/fish-preview.jpeg",
       userId: 3
     }
   ]
 };
 
 const getters = {
-  albumsAmount: state => {
-    return state.albums.length;
+  getCheckedAmount: state => checked => {
+    if (!checked.length) return state.albums.length;
+
+    return checked.length;
+  },
+
+  getCheckedAlbums: state => checked => {
+    if (!checked.length) return state.albums;
+
+    var albums = [];
+    checked.sort();
+    checked.forEach(item => albums.push(state.albums[item]));
+    return albums;
   }
 };
 

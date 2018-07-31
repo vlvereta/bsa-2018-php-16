@@ -23,7 +23,7 @@
         <div class="form-group"> 
           <div class="buttons">
             <button type="submit" class="btn btn-warning">Edit</button>
-            <button @click="$router.push({ name: 'users' })" type="button" class="btn btn-primary">Back</button>
+            <button @click="$router.push({ name: 'user', params: { id: $route.params.id } })" type="button" class="btn btn-primary">Back</button>
           </div>
         </div>
       </form>

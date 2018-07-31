@@ -1,10 +1,11 @@
 <template>
   <div>
-    <h1 class="page-header">Users: {{ amount }}</h1>
+    <h1 v-if="showUserList" class="page-header">Users: {{ amount }}</h1>
+    <h1 v-else class="page-header">Search User..</h1>
     <template>
-      <SearchPanel></SearchPanel>
+      <SearchPanel @clicked="onShowUserList"></SearchPanel>
     </template>
-    <div class="row">
+    <div v-if="showUserList" class="row">
       <div class="col-sm-12">
         <router-link :to="{ name: 'add-user' }"><button class="btn btn-success add-user-btn">Add user</button></router-link>
       </div>
@@ -28,6 +29,7 @@ export default {
 
   data() {
     return {
+      showUserList: true
     };
   },
   
@@ -38,6 +40,12 @@ export default {
     ...mapGetters({
       amount: 'users/usersAmount'
     })
+  },
+
+  methods: {
+    onShowUserList(value) {
+      this.showUserList = value;
+    }
   }
 }
 </script>

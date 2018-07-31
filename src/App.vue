@@ -7,8 +7,7 @@
 						<a class="navbar-brand" href="https://github.com/vlvereta/bsa-2018-php-16">BSA-2018-php-16</a>
 					</div>
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li> 
-            <li><router-link to="/users">Users</router-link></li>
+            <li class="active"><router-link to="/users">Users</router-link></li>
             <li><router-link to="/albums">Albums</router-link></li>
           </ul>
 				</div>
