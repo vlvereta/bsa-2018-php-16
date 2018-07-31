@@ -24,7 +24,7 @@
             <div class="h-with-delete">
               <h4>{{ photo.title }}</h4>
               <!-- How to pass photo.id to deletePhoto mehtod correctly?1 -->
-              <button @click="deletePhotoId = photo.id; deletePhoto();" class="btn btn-danger btn-sm">Delete</button>
+              <button @click="deletePhoto(photo.id);" class="btn btn-danger btn-sm">Delete</button>
             </div>
           </div>
         </div>
@@ -36,7 +36,6 @@
 export default {
   data() {
     return {
-      deletePhotoId: 0
     };
   },
 
@@ -64,8 +63,8 @@ export default {
       this.$router.push({ name: 'albums' });
     },
 
-    deletePhoto() {
-      this.$store.dispatch('photos/deletePhoto', this.deletePhotoId);
+    deletePhoto: function(id) {
+      this.$store.dispatch('photos/deletePhoto', id);
     }
   }
 }
