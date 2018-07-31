@@ -15,7 +15,7 @@
     </div>
     <hr>
     <!--<template v-for="(photo, id) in photos">
-      <div class="col-sm-3">
+      <div :key="id" class="col-sm-3">
         <img src="">
       </div>
     </template>-->

@@ -1,5 +1,3 @@
-// import Vue from "vue";
-
 const state = {
   albums: [
     {
@@ -27,7 +25,15 @@ const getters = {
   getCheckedAmount: state => checked => {
     if (!checked.length) return state.albums.length;
 
-    return checked.length;
+    var amount = 0;
+    checked.forEach(function(item, i, arr) {
+      state.albums.forEach(function(item2, i2, arr2) {
+        if (item2.userId === item) {
+          amount++;
+        }
+      });
+    });
+    return amount;
   },
 
   getCheckedAlbums: state => checked => {
@@ -62,16 +68,6 @@ const mutations = {
     });
   },
 
-  //   EDIT_USER(state, { id, data }) {
-  //     const updatedUser = {
-  //       name: data.name,
-  //       email: data.email,
-  //       avatar: data.avatar
-  //     };
-
-  //     Vue.set(state.users, id, updatedUser);
-  //   },
-
   DELETE_ALBUM(state, id) {
     state.albums.splice(id, 1);
   }
@@ -86,15 +82,6 @@ const actions = {
       }, 250);
     });
   },
-
-  //   editUser({ commit }, data) {
-  //     return new Promise(resolve => {
-  //       setTimeout(() => {
-  //         commit("EDIT_USER", data);
-  //         resolve();
-  //       }, 250);
-  //     });
-  //   },
 
   deleteAlbum({ commit }, id) {
     return new Promise(resolve => {
